@@ -1,36 +1,36 @@
-def main():
-    greet_user()
-    pasangan_status = get_user_input("Dah ada pasangan/calon? (ya/tidak): ")
+def utama():
+    beri_salam()
+    status_pasangan = dapatkan_input("Dah ada pasangan/calon? (ya/tidak): ")
 
-    if pasangan_status == "ya":
-        end_conversation("Saya berhenti di sini sahaja dan tidak akan berhubung tanpa urusan.")
-    elif pasangan_status == "tidak":
-        proceed_taaruf()
+    if status_pasangan == "ya":
+        tamatkan_perbualan("Saya berhenti di sini sahaja dan tidak akan berhubung tanpa urusan.")
+    elif status_pasangan == "tidak":
+        teruskan_taaruf()
     else:
-        invalid_choice()
+        pilihan_tidak_sah()
 
-def greet_user():
+def beri_salam():
     print("Assalamualaikum")
     print("Tujuan saya mesej ini hanya untuk bertanya status cik Anis")
 
-def get_user_input(prompt):
-    return input(prompt).strip().lower()
+def dapatkan_input(arahan):
+    return input(arahan).strip().lower()
 
-def end_conversation(message):
-    print(message)
+def tamatkan_perbualan(pesan):
+    print(pesan)
 
-def proceed_taaruf():
-    taaruf_status = get_user_input("Sudi untuk bertaaruf? (ya/tidak): ")
+def teruskan_taaruf():
+    status_taaruf = dapatkan_input("Sudi untuk bertaaruf? (ya/tidak): ")
     
-    if taaruf_status == "ya":
-        print("InsyaAllah boleh berbincang untuk urusan seterusnya. Jika rasa tidak sesuai/serasi, boleh hentikan taaruf.")
-    elif taaruf_status == "tidak":
-        end_conversation("Saya berhenti di sini sahaja dan tidak akan berhubung tanpa urusan.")
+    if status_taaruf == "ya":
+        print("InsyaAllah kita boleh berbincang untuk urusan seterusnya. Jika rasa tidak sesuai/serasi, boleh hentikan taaruf.")
+    elif status_taaruf == "tidak":
+        tamatkan_perbualan("Saya berhenti di sini sahaja dan tidak akan berhubung tanpa urusan.")
     else:
-        invalid_choice()
+        pilihan_tidak_sah()
 
-def invalid_choice():
+def pilihan_tidak_sah():
     print("Pilihan tidak sah.")
 
 if __name__ == "__main__":
-    main()
+    utama()
