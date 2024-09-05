@@ -11,7 +11,7 @@ def utama():
 
 def beri_salam():
     print("Assalamualaikum")
-    print("Tujuan saya mesej ini hanya untuk bertanya status cik Anis")
+    print("Tujuan saya mesej ini hanya untuk bertanya status cik?")
 
 def dapatkan_input(arahan):
     return input(arahan).strip().lower()
